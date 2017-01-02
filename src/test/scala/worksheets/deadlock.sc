@@ -9,10 +9,8 @@ val transactionThread2 = Banking.atomicTransferThread(targetAccount,sourceAccoun
 transactionThread1.join()
 transactionThread2.join()
 
-// the following code is never reached!
-// transactionThread1 blocks sourceAccount and tries to obtain a block on targetAccount
-// transactionThread2 blocks targetAccount and tries to obtain a block on sourceAccount
-// both wait until the block of the other is over...
+// now the coding is reached!
+// locking of accounts happens in sequence of their uids
 sourceAccount
 targetAccount
 

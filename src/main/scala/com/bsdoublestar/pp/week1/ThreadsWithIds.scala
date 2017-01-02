@@ -8,7 +8,7 @@ object ThreadsWithIds {
   private def startThread(f: Long) = {
     val t = new Thread {
       override def run() {
-        val uids = for (i <- 0 until 30) yield f()
+        val uids = for (i <- 0 until 30) yield f
         println(uids)
       }
     }
